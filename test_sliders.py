@@ -12,7 +12,7 @@ EC0 = 50.0
 t=np.arange(-20,20,1)
 
 circuit_test=trans(20,EC0,EJ0)
-E0,E1,E2=circuit_test.energies(terms=20, ng_in=0.1)
+E0,E1,E2=circuit_test.energies(terms=20)
 #one energy
 #l, = plt.plot(t, E0, 'red')
 #three energies
@@ -36,15 +36,11 @@ def update(val):
     EJ = sEJ.val
     circuit_test=trans(20,EC,EJ)
     E0,E1,E2=circuit_test.energies()
-
     l[0].set_ydata(E0)
     l[1].set_ydata(E1)
     l[2].set_ydata(E2)
-
-    #print(E0[np.argmax(E0)],E2[np.argmax(E2)])
-    #plt.axis([-20, 20, E0[np.argmax(E0)],E2[np.argmax(E2)]])
-    #print(l[0].get_ydata())
     fig.canvas.draw_idle()
+
 sEC.on_changed(update)
 sEJ.on_changed(update)
 

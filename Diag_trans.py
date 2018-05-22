@@ -38,6 +38,7 @@ class trans:
 			off_elements=-self.Ej*(np.diag(np.ones(2*self.nMax+2),1)+np.diag(np.ones(2*self.nMax+2),-1))/2
 			#print(off_elements)
 			H=off_elements+diag
+			#print(H)
 
 			val,vector=np.linalg.eigh(H)
 
@@ -46,5 +47,6 @@ class trans:
 			E1.append(val[-2])
 			
 			E2.append(val[-3])
+			print(val[-1],val[-2],val[-3])
 			
 		return np.array(E0), np.array(E1), np.array(E2)
