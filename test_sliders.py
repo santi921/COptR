@@ -53,6 +53,7 @@ def update(val):
     fig.canvas.draw_idle()
 
     #prints circuit statistics
+
     print((np.sqrt(8*EC*EJ)-EC)/(mean[1]-mean[0]))
     
     print(" var 1: \t"+str(np.var(E1)))
